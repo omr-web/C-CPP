@@ -1,5 +1,5 @@
 // usage of If control statement
-
+// Written by Omer CEBECİ 7 July 2022
 /*
 int main () {
     int x=10 , y=20;
