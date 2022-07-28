@@ -1,6 +1,6 @@
 
 //Comma oparator using
-
+// Written by Omer CEBECI 7 July 2022
 /*
 int main () {
     int x=10 , y=30;
