@@ -12,3 +12,7 @@ add_executable( Pointers pointers.cpp
 add_executable( StringLibrary src/string_library.cpp
                               main.cpp                               
               )
+
+add_executable( Structures data_structures.cpp
+                                         
+)
