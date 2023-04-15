@@ -16,3 +16,10 @@ add_executable( StringLibrary src/string_library.cpp
 add_executable( Structures data_structures.cpp
                                          
 )
+
+add_executable( Reference references.cpp
+                                         
+)
+
+add_executable( DefaultArguments default_arguments.cpp)
+

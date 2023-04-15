@@ -149,7 +149,7 @@ int main(){
 */
 
 
-/*
+
 // ex3
 using namespace std;
 typedef struct student {
@@ -237,5 +237,5 @@ void displayProgramInfo(void) {
 }
 
 
-*/
+
 
