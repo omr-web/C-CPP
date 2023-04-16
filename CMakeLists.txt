@@ -23,3 +23,6 @@ add_executable( Reference references.cpp
 
 add_executable( DefaultArguments default_arguments.cpp)
 
+add_executable(functionOverloading function_overloading.cpp)
+
+add_executable(dynamicMemory dynamic_memory.cpp)
