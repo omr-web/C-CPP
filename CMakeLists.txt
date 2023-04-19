@@ -26,3 +26,6 @@ add_executable( DefaultArguments default_arguments.cpp)
 add_executable(functionOverloading function_overloading.cpp)
 
 add_executable(dynamicMemory dynamic_memory.cpp)
+add_executable(turNiteleyiciler tur_niteleyiciler.cpp)
+
+add_executable(NewDelete new_delete.cpp)
