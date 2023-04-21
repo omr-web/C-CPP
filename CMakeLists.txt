@@ -29,3 +29,5 @@ add_executable(dynamicMemory dynamic_memory.cpp)
 add_executable(turNiteleyiciler tur_niteleyiciler.cpp)
 
 add_executable(NewDelete new_delete.cpp)
+
+add_executable(nameSpace namespace.cpp)
