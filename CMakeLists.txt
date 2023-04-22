@@ -31,3 +31,5 @@ add_executable(turNiteleyiciler tur_niteleyiciler.cpp)
 add_executable(NewDelete new_delete.cpp)
 
 add_executable(nameSpace namespace.cpp)
+
+add_executable(Class classes.cpp)
