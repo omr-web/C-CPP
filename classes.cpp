@@ -342,25 +342,476 @@ int main(){
 //ex12
 
 
+// class MyClass {
+//     private:
+//         int x;
+        
+//     public:
+//         MyClass *foo();
+//         void func();
+
+// };
+// void MyClass::func() {
+
+// }
+// MyClass* MyClass::foo(){
+//     // cout<<"this:"<<this<<endl;
+//     return this;
+// }
+// int main(){
+
+//     MyClass data;
+    
+//     data.foo()->func(); // geçerli çünkü data.foo() zaten this
+// }
+
+
+//ex13
+
+// cout overloading kullanımı
+
+// int main(){
+//     char *p = "mehmet";
+//     int x = 2345;
+//     double d = 13.23;
+
+//     // cout<<x << p << d <<endl;
+//     cout.operator<<(x).operator<<(p).operator<<(d);
+// }
+
+
+//ex14
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         void func();
+// };
+
+// MyClass g;
+
+// void MyClass::func(){
+//     // this = &g ; // anachronism
+//     *this = g;
+
+// }
+// int main(){
+//     MyClass f;
+//     f.func();
+//     cout<<"&f:"<<&f<<endl;
+//     cout<<"&g:"<<&g<<endl;
+
+// }
+
+
+//ex15
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         void func();
+// };
+
+
+
+// void func(){
+//     cout<<"global func"<<endl;
+// }
+
+// void MyClass::func(){
+//     cout<<"func"<<endl;  
+
+//     // 1. örnek 
+//     // ::func(); // global scope
+//     // func(); // class scope
+    
+//     // 2. örnek
+//     this->x = 5;
+//     cout<<"x:"<<x;
+//     MyClass::x = 0;
+//     cout<<"x:"<<x;
+//     x = 10;
+//     cout<<"x:"<<x;
+// }
+
+
+
+// int main(){
+//     MyClass g;
+//     g.func();
+
+// }
+
+
+
+//ex16  CONSTRUCTOR AND DESTRUCTOR
+
+/*
+Sınıfın nesneleridirler.
+Constructor ==> kurucu ögedir aslında bir fonksiyon ilk değer atamaları yapar
+Destructor ==> free objeyi destroy eder
+
+(1) Class adı Constructor adıdır.
+(2) Constructor const olamaz.
+(3) Constructor return edemez 
+(4) Birden fazla constructor olabilir
+(5) Constructor private olabilir
+(5) myclass.Myclass() böyle çağrılamaz.
+
+*/
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         // bir constructor declere edildiğinde define edilmek zorundadır.
+//         MyClass();
+// };
+
+
+// MyClass::MyClass() {
+//     cout<<"constructor"<<endl;
+// }
+
+// int main(){
+//     // constructor 2 kere çağrılır.
+//     MyClass m1;
+//     MyClass m2;
+
+
+// }
+
+
+//ex17
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         // bir constructor declere edildiğinde define edilmek zorundadır.
+//         MyClass();
+// };
+
+
+// MyClass::MyClass() {
+//     cout<<"constructor"<<endl;
+// }
+
+// int main(){
+//     // constructor 2 kere çağrılır.
+//     cout<<"main func"<<endl;
+//     MyClass m1;
+//     cout<<"main func"<<endl;
+
+
+// }
+
+
+//ex18
+
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         // bir constructor declere edildiğinde define edilmek zorundadır.
+//         MyClass();
+// };
+
+
+// MyClass::MyClass() {
+//     cout<<"constructor"<<endl;
+//     cout<<"this"<<this<<endl;
+// }
+
+// int main(){
+
+//     // MyClass *ptr;
+//     // ptr = new MyClass;
+
+//     // cout<<"ptr:"<<ptr<<endl;
+
+//     int n;
+//     cout<<"kac obje"<<endl;
+//     cin>>n;
+//     MyClass *ptr = new MyClass[n];
+
+
+
+// }
+
+
+
+//ex19
+
+
+// class MyClass {
+//     private:
+//         int x;
+//         MyClass();
+
+//     public:
+//         // bir constructor declere edildiğinde define edilmek zorundadır.
+// };
+
+
+// MyClass::MyClass() {
+//     cout<<"constructor"<<endl;
+// }
+
+// int main(){
+//     // constructor 2 kere çağrılır.
+
+//     MyClass m1;// constructor private olduğu için ben burda bir nesne
+//                 // yaratamıyorum.
+ 
+
+
+// }
+
+
+
+//ex20
+
+
+// class Counter {
+//     private:
+//         int mval;
+//     public:
+//         Counter();
+//         void Display()const;
+//         void increment();
+//         void decrement();
+
+// };
+
+// Counter::Counter() {
+//     cout<<"constructor"<<endl;
+//     mval = 0;
+// }
+
+// void Counter::Display() const {
+//     cout<<"mval"<<mval<<endl;
+// }
+
+// void Counter::increment(){
+//     mval++;
+// }
+
+// void Counter::decrement(){
+//     mval--;
+// }
+
+
+// int main(){
+//     Counter myCounter;
+
+//     myCounter.Display();
+
+//     for(int i = 0; i<10; i++) 
+//         myCounter.increment();
+//     myCounter.Display();
+
+//     for(int i = 0; i<10; i++) 
+//         myCounter.decrement();
+//     myCounter.Display();
+    
+
+// }
+
+
+
+//ex21 
+
+
+// class MyClass{
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"default constructor"<<endl;
+//         }
+//         MyClass(int a){
+//             cout<<"int contructor"<<endl;
+//         }
+
+// };
+
+// int main(){
+//     MyClass m1;
+
+//     MyClass m2 = 5;
+//     MyClass m3(5);
+//     MyClass m4{5};
+
+
+
+// }
+
+
+//ex22 
+
+
+/*
+nesne hayatı bitince,
+main sonu,
+nesne free edilirse
+
+(1) dönüş tipi yok
+(2) overload yok
+(3) parametre de almaz
+(4) private olabilir ama dikkat edilmeli
+*/
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+// };
+
+
+// int main(){
+//     MyClass m1;
+// }
+
+
+//ex23
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+//         void func(){
+//             cout<<"func"<<endl;
+//         }
+// };
+
+// void func(){
+//     cout<<"global func"<<endl;
+// }
+// int main(){
+    
+//     MyClass m1,m2;
+
+//     m1.~MyClass(); // elle çağırsak bile yok ediliyor anlamına gelmez
+//     m1.func();
+//     func();
+//     cout<<"main start"<<endl;
+
+// }
+
+
+//ex23
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+//         void func(){
+//             cout<<"func"<<endl;
+//         }
+// };
+
+// void func(){
+//     cout<<"global func"<<endl;
+// }
+// int main(){
+//     MyClass *pd = new MyClass;
+//     // destructor cagrılmaz 
+//     // ancak delete fonskyionu çağrılırsa destructor çağrılır
+//     delete pd;
+// }
+
+
+
+//ex24
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+//         void func(){
+//             cout<<"func"<<endl;
+//         }
+// };
+
+// void func(){
+//     cout<<"global func"<<endl;
+// }
+// int main(){
+//     MyClass *pd = new MyClass[5];
+
+//     delete [] pd ; // destructor çağrılır
+
+//     // dinamik olarak oluşturulan nesnenin destructor ı kendi
+//     // çağrılmaz.
+
+// }
+
+
+
+//ex25
+
+
+
 class MyClass {
     private:
         int x;
-        
     public:
-        MyClass *foo();
-        void func();
-
+        MyClass(){
+            cout<<"constructor"<<endl;
+        }
+        ~MyClass(){
+            cout<<"destructor"<<endl;
+        }
+        void func(){
+            cout<<"func"<<endl;
+        }
 };
-void MyClass::func() {
 
+void func(){
+    static MyClass m;
+    //MyClass m;
+
+    cout<<"global func"<<endl;
 }
-MyClass* MyClass::foo(){
-    // cout<<"this:"<<this<<endl;
-    return this;
-}
+
 int main(){
+    cout<<"main start"<<endl;
+    func();
+    cout<<"main end"<<endl;
 
-    MyClass data;
-    
-    data.foo()->func(); // geçerli çünkü data.foo() zaten this
 }
