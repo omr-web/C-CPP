@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -787,31 +788,352 @@ nesne free edilirse
 
 
 
-class MyClass {
-    private:
-        int x;
-    public:
-        MyClass(){
-            cout<<"constructor"<<endl;
-        }
-        ~MyClass(){
-            cout<<"destructor"<<endl;
-        }
-        void func(){
-            cout<<"func"<<endl;
-        }
-};
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+//         void func(){
+//             cout<<"func"<<endl;
+//         }
+// };
 
-void func(){
-    static MyClass m;
-    //MyClass m;
+// void func(){
+//     static MyClass m;
+//     //MyClass m;
 
-    cout<<"global func"<<endl;
-}
+//     cout<<"global func"<<endl;
+// }
 
-int main(){
-    cout<<"main start"<<endl;
-    func();
-    cout<<"main end"<<endl;
+// int main(){
+//     cout<<"main start"<<endl;
+//     func();
+//     cout<<"main end"<<endl;
 
-}
+// }
+
+
+
+//ex26
+// 2 kere destructor çağrılması
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+//         void func(){
+//             cout<<"func"<<endl;
+//         }
+// };
+
+// void func(MyClass x){
+   
+//     cout<<"global func"<<endl;
+// }
+
+// int main(){
+//     MyClass x;
+//     func(x);
+
+
+// }
+
+
+
+//ex27
+
+/*
+obje oluşturunca otomatik oluşan fonksiyonlar:
+
+-- constructor 
+-- destructor
+-- copy constructor
+-- assignment operator
+*/
+
+/*
+Nerelerde copy constructor çağrılır:
+1) Nesne oluştururken
+2) call by value durumunda
+3) obje yı return edersek 
+
+*/
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"default constructor"<<endl;
+//         }
+//         MyClass(const MyClass &r){
+//             cout<<"copy constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+
+// };
+
+// int main(){
+//     MyClass m1;
+//     MyClass m2(m1);
+
+// }
+
+
+
+//ex27
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"default constructor"<<endl;
+//         }
+//         MyClass(const MyClass &r){
+//             cout<<"copy constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+       
+
+// };
+
+
+// void func(MyClass x) {
+//     cout<<"func"<<endl;
+// }
+// void func2(MyClass &x) {
+//     cout<<"func2"<<endl;
+// }
+
+// int main(){
+//     MyClass m1;
+//     MyClass m2(m1);
+//     func(m1);
+//     func2(m2);
+
+//     cout<<"main end"<<endl;
+// }
+
+
+//ex28
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"default constructor"<<endl;
+//         }
+//         MyClass(const MyClass &r){
+//             cout<<"copy constructor"<<endl;
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+       
+
+// };
+
+
+// MyClass g;
+
+// MyClass func() {
+//     return g;
+// }
+
+// MyClass& func2() {
+//     cout<<"func2"<<endl;
+//     return g;
+// }
+// int main(){
+
+//     cout<<"main basladi"<<endl;
+//     func();
+//     func2();
+//     cout<<"main end"<<endl;
+// }
+
+
+//ex29
+
+
+
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(){
+//             cout<<"default constructor"<<endl;
+//             cout<<"this:"<<this<<endl;
+//         }
+//         MyClass(const MyClass &r){
+//             cout<<"copy constructor"<<endl;
+//             cout<<"copy constructor this:"<<this<<endl;
+
+//         }
+//         ~MyClass(){
+//             cout<<"destructor"<<endl;
+//         }
+       
+
+// };
+
+
+// MyClass g;
+
+// void func(MyClass x) {
+//     cout<<"adress  of class: "<<&x<<endl;
+// }
+
+// void func2(MyClass &x) {
+//     cout<<"adress  of class in func2 : "<<&x<<endl;
+// }
+
+
+// int main(){
+
+//     cout<<"main basladi"<<endl;
+//     func(g);
+//     cout<<"address of g"<<&g<<endl;
+//     func2(g);
+//     cout<<"main end"<<endl;
+// }
+
+
+//ex30
+
+// class Name{
+//     private:
+//         char *pd;
+//         int len;
+//     public:
+//         Name(const char* p);
+//         Name(const Name &r);
+//         void display()const;
+//         int getlen()const;
+//         char* address();
+//         ~Name();
+
+//         // we will see in next lesson
+//         //Name &operator=(const Name &r);
+// };
+
+// Name::Name(const char* p){
+//     len = strlen(p);
+//     pd =new char[len+1];
+//     strcpy(pd,p);
+//     cout<<"pd ="<<pd<<endl;
+
+// }
+
+
+      
+// Name::Name(const Name &r) {
+//     len = r.len;
+//     pd  = new char[len+1];
+//     strcpy(pd,r.pd);
+//     cout<<"copy constructor"<<endl;
+// }
+
+// Name::~Name(){
+//     cout<<"destructor"<<endl;
+//     delete [] pd;
+// }
+
+// void Name::display()const {
+//     cout<<"name: "<<this->pd<<endl;
+// }
+
+// int Name::getlen()const {
+//     return len;
+// }
+
+// void func(Name p) {
+//     cout<<"func calling"<<endl;
+//     getchar();
+// }
+// int main(){
+//     Name my_name("mehmet");
+//     Name my_name_2(my_name);
+    
+//     my_name.display();
+//     my_name_2.display();
+
+
+
+//     //my_name.~Name();
+//     //func(my_name);
+// }
+
+
+//ex31
+
+// class A{
+//     private:
+//         int *x;
+//     public:
+//         A(int *p);
+//         int* getAddress()const;
+//         int valueOfX()const;
+//         ~A();
+// };
+
+// A::A(int *p) {
+//     x = p;
+//     cout<<"default constructor"<<endl;
+// }
+
+// A::~A(){
+//     cout<<"destructor"<<endl;
+// }
+// int* A::getAddress()const{
+    
+//     return x;
+// }
+
+// int A::valueOfX()const {
+//     return *x;
+// }
+// int main(){
+//     int value = 5;
+//     int *ptr = &value;
+
+//     A a(ptr); // default
+//     A b(a);  // copy 
+
+//     cout<<a.getAddress()<<endl;
+//     cout<<a.valueOfX()<<endl;
+
+//     cout<<b.getAddress()<<endl;
+//     cout<<b.valueOfX()<<endl;
+
+//     value = 10;
+
+//     cout<<a.getAddress()<<endl;
+//     cout<<a.valueOfX()<<endl;
+
+//     cout<<b.getAddress()<<endl;
+//     cout<<b.valueOfX()<<endl;
+
+
+// }
