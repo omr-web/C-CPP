@@ -1088,52 +1088,52 @@ Nerelerde copy constructor çağrılır:
 
 //ex31
 
-// class A{
-//     private:
-//         int *x;
-//     public:
-//         A(int *p);
-//         int* getAddress()const;
-//         int valueOfX()const;
-//         ~A();
-// };
+class A{
+    private:
+        int *x;
+    public:
+        A(int *p);
+        int* getAddress()const;
+        int valueOfX()const;
+        ~A();
+};
 
-// A::A(int *p) {
-//     x = p;
-//     cout<<"default constructor"<<endl;
-// }
+A::A(int *p) {
+    x = p;
+    cout<<"default constructor"<<endl;
+}
 
-// A::~A(){
-//     cout<<"destructor"<<endl;
-// }
-// int* A::getAddress()const{
+A::~A(){
+    cout<<"destructor"<<endl;
+}
+int* A::getAddress()const{
     
-//     return x;
-// }
+    return x;
+}
 
-// int A::valueOfX()const {
-//     return *x;
-// }
-// int main(){
-//     int value = 5;
-//     int *ptr = &value;
+int A::valueOfX()const {
+    return *x;
+}
+int main(){
+    int value = 5;
+    int *ptr = &value;
 
-//     A a(ptr); // default
-//     A b(a);  // copy 
+    A a(ptr); // default
+    A b(a);  // copy 
 
-//     cout<<a.getAddress()<<endl;
-//     cout<<a.valueOfX()<<endl;
+    cout<<a.getAddress()<<endl;
+    cout<<a.valueOfX()<<endl;
 
-//     cout<<b.getAddress()<<endl;
-//     cout<<b.valueOfX()<<endl;
+    cout<<b.getAddress()<<endl;
+    cout<<b.valueOfX()<<endl;
 
-//     value = 10;
+    value = 10;
 
-//     cout<<a.getAddress()<<endl;
-//     cout<<a.valueOfX()<<endl;
+    cout<<a.getAddress()<<endl;
+    cout<<a.valueOfX()<<endl;
 
-//     cout<<b.getAddress()<<endl;
-//     cout<<b.valueOfX()<<endl;
+    cout<<b.getAddress()<<endl;
+    cout<<b.valueOfX()<<endl;
 
 
-// }
+}
