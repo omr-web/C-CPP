@@ -4,14 +4,24 @@ project( cppCodes )
 
 
 include_directories( 
-                      headers   )
+    ${PROJECT_SOURCE_DIR}/headers   )
+          
+
+# add_executable( MyClass  src/main.cpp src/MyClass.cpp
                       
+#               )
+
+add_executable( MyClass2  src/main.cpp src/MyClass_2.cpp
+                      
+              )
+
 add_executable( Pointers pointers.cpp                               
               )
 
-add_executable( StringLibrary src/string_library.cpp
-                              main.cpp                               
-              )
+# add_executable( StringLibrary src/string_library.cpp
+#                             src/main.cpp
+                                                         
+#               )
 
 add_executable( Structures data_structures.cpp
                                          
@@ -36,4 +46,11 @@ add_executable(Class classes.cpp)
 
 
 add_executable(OperatorOverloading operator_overloading.cpp)
+
+add_executable(ConstStatic const_static_keywords.cpp)
+
+
+
+
+
 
