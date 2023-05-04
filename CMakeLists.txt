@@ -11,9 +11,11 @@ include_directories(
                       
 #               )
 
-add_executable( MyClass2  src/main.cpp src/MyClass_2.cpp
+# add_executable( MyClass2  src/main.cpp src/MyClass_2.cpp
                       
-              )
+#               )
+
+# add_executable(Doctor src/main.cpp src/doctor.cpp)
 
 add_executable( Pointers pointers.cpp                               
               )
@@ -27,6 +29,7 @@ add_executable( Structures data_structures.cpp
                                          
 )
 
+add_executable(Inline inline_keyword.cpp )
 add_executable( Reference references.cpp
                                          
 )

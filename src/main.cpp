@@ -1,7 +1,7 @@
 // #include "string_library.h"
 #include <iostream>
 // #include "MyClass.h"
-#include "MyClass_2.h"
+//#include "MyClass_2.h"
 using namespace std;
 
 
@@ -100,11 +100,26 @@ static member ve static function olmak üzere ikiye ayrılıyor.
 
 // constructor private olursa
 
+// int main(){
+
+//     //sentaks error
+//     //MyClass m1;
+
+//     MyClass *p = MyClass::createObject();
+//     cout<<"counter: "<<p->getCounter();
+// }
+
+
+// doctor sınıfı
+#include "doctor.h"
+
 int main(){
+    Doctor d1("mehmet",29);
+    Doctor d2("omer",29);
+    Doctor d3("cemal",29);
 
-    //sentaks error
-    //MyClass m1;
-
-    MyClass *p = MyClass::createObject();
-    cout<<"counter: "<<p->getCounter();
+    d1.display();
+    d2.display();
+    d3.display();
 }
+
