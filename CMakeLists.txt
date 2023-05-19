@@ -52,8 +52,12 @@ add_executable(OperatorOverloading operator_overloading.cpp)
 
 add_executable(ConstStatic const_static_keywords.cpp)
 
+add_executable(Friend friend.cpp)
 
 
 
-
+add_executable( SintLibrary src/sint.cpp
+                            src/main.cpp
+                                                         
+              )
 

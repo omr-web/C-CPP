@@ -109,7 +109,7 @@ static member ve static function olmak üzere ikiye ayrılıyor.
 //     cout<<"counter: "<<p->getCounter();
 // }
 
-
+/*
 // doctor sınıfı
 #include "doctor.h"
 
@@ -123,3 +123,83 @@ int main(){
     d3.display();
 }
 
+*/
+
+
+//sint kütüphanesi
+//#include "sint.h"
+
+//ex1
+// int main(){
+//     sint x(10);
+//     sint y(20);
+
+//     std::cout<<"x:"<<x.operator++();
+//     std::cout<<"x:"<<x;
+
+// }
+
+
+/*
+ operator int()const {
+    return mval
+ }
+
+it cannot create object
+it must be const function
+unary
+*/
+//ex2
+
+// class MyClass {
+//     private:
+//         int x;
+//     public:
+//         MyClass(int val):x(val) {
+
+//         }
+
+//         operator int()const {
+//            return x;
+//         }
+// };
+// int main(){
+
+//     MyClass m1(41.2);
+//     MyClass m2(62.);
+
+//     // burda m1 ve m2 önce int e dönüştürülür sonra toplanır
+//     cout<<"m1+m2 = "<<m1+m2<<endl;
+
+// }
+
+
+//ex3
+
+
+// class B;
+
+// class A{
+//     public:
+//         A(const B &r) {
+
+//         }
+//         A() {
+
+//         }
+// };
+
+// class B {
+//     public:
+//         operator A()const {
+//             return  A();
+//         }
+// };
+
+
+// int main(){
+//     A a;
+//     B b;
+//     a = b;
+
+// }
