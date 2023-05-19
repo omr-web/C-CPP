@@ -203,3 +203,34 @@ unary
 //     a = b;
 
 // }
+
+
+#include "array_class.h"
+
+//ex1
+// int main(){
+
+//     Array a(10);
+    
+//     a.display();
+
+// }
+
+int main(){
+    Array a(10);
+    const Array b(10);
+    a.display();
+    b.display();
+
+    for(int k=0;k<a.size();k++) {
+        a.at(k) = k*k;
+    }
+    a.display();
+
+   // b.at(4) = 9; // b const yani read only sentax hatası 
+    // array in const olması yazdığımız const fonksiyonlar 
+    // sayesinde oldu
+    a =b;
+    a.display();
+
+}

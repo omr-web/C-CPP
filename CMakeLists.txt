@@ -56,8 +56,12 @@ add_executable(Friend friend.cpp)
 
 
 
-add_executable( SintLibrary src/sint.cpp
-                            src/main.cpp
+# add_executable( SintLibrary src/sint.cpp
+#                             src/main.cpp
                                                          
-              )
+#               )
 
+
+add_executable(ArrayClass src/array_class.cpp
+                          src/main.cpp
+              )
