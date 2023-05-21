@@ -62,6 +62,8 @@ add_executable(Friend friend.cpp)
 #               )
 
 
-add_executable(ArrayClass src/array_class.cpp
-                          src/main.cpp
-              )
+# add_executable(ArrayClass src/array_class.cpp
+#                           src/main.cpp
+#               )
+
+add_executable(OperatorPointer operator_overloading_pointers.cpp)
