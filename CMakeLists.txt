@@ -71,6 +71,8 @@ add_executable(Friend friend.cpp)
 
 # add_executable(TypeConversion  type_conversion.cpp)
 
-add_executable(LinkedList src/linked_list.cpp
-                          src/main.cpp
-              )
+# add_executable(LinkedList src/linked_list.cpp
+#                           src/main.cpp
+#               )
+
+add_executable(Inheritance inheritance.cpp)
