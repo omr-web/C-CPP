@@ -66,7 +66,11 @@ add_executable(Friend friend.cpp)
 #                           src/main.cpp
 #               )
 
-add_executable(OperatorPointer operator_overloading_pointers.cpp)
+# add_executable(OperatorPointer operator_overloading_pointers.cpp)
 
 
-add_executable(TypeConversion  type_conversion.cpp)
+# add_executable(TypeConversion  type_conversion.cpp)
+
+add_executable(LinkedList src/linked_list.cpp
+                          src/main.cpp
+              )

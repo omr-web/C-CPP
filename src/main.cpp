@@ -216,21 +216,54 @@ unary
 
 // }
 
+// int main(){
+//     Array a(10);
+//     const Array b(10);
+//     a.display();
+//     b.display();
+
+//     for(int k=0;k<a.size();k++) {
+//         a.at(k) = k*k;
+//     }
+//     a.display();
+
+//    // b.at(4) = 9; // b const yani read only sentax hatası 
+//     // array in const olması yazdığımız const fonksiyonlar 
+//     // sayesinde oldu
+//     a =b;
+//     a.display();
+
+// }
+
+
+// linked list
+
+#include "linked_list.h"
+
 int main(){
-    Array a(10);
-    const Array b(10);
-    a.display();
-    b.display();
 
-    for(int k=0;k<a.size();k++) {
-        a.at(k) = k*k;
+    // insertElement(0,10);
+    // insertElement(1,20);
+    // insertElement(2,560);
+    // insertElement(3,55);
+    
+    // printf("len of list: %d \n",length());
+    
+    // printList();
+    // deleteElement();
+    // printList();
+
+    // deleteElement();
+    // printList();
+    // printf("len of list: %d \n",length());
+
+    //ex2 for linked list
+    for(int i=0;i<100;i++) {
+        insertElement(i,i*i-5);
     }
-    a.display();
-
-   // b.at(4) = 9; // b const yani read only sentax hatası 
-    // array in const olması yazdığımız const fonksiyonlar 
-    // sayesinde oldu
-    a =b;
-    a.display();
-
+    // printList();
+    Node* found_data = find(10);
+    
+    printf("key : 10, address: %p",found_data);
+    
 }
