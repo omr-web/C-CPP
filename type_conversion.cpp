@@ -116,43 +116,210 @@ using namespace std;
 //ex2
 
 
-class Engine {
-    private:
+// class Engine {
+//     private:
+//     public:
+//         Engine(){
+//             cout<<"Engine constructor"<<endl;
+//         }
+//         ~Engine(){
+//             cout<<"Engine destructor"<<endl;
+//         }
+//         void run(){
+//             cout<<"engine strarted"<<endl;
+//         }
+//         int switcher;
+
+
+// };
+
+// class Car {
+//     private:
+//         Engine itsEngine;       
+
+
+//     public:
+//         Car(){
+//             cout<<"Car constructor"<<endl;
+//         }
+//         ~Car(){
+//             cout<<"Car destructor"<<endl;
+//         }
+//         void run(){
+//             itsEngine.switcher = 5;
+//             itsEngine.run();
+//         }
+// };
+
+
+// int main(){
+//    Car mycar;
+//    mycar.run();
+// }
+
+
+//ex3
+
+// class Member {
+//     public:
+//         Member(){
+//             cout<<"default Member constructor"<<endl;
+//         }
+//         ~Member(){
+//             cout<<" Member destructor"<<endl;
+//         }
+//         Member(int a) {
+//             cout<<"overloaded Member constructor"<<endl;
+//         }
+// };
+// class Owner {
+//     private:
+//         Member m;
+//         int y;
+//     public:
+//         Owner(): m(0) {
+//             cout<<"default Owner constructor"<<endl;
+//         }
+//         ~Owner(){
+//             cout<<" Owner destructor"<<endl;
+
+//         }
+//         int getY(){
+//             return y;
+//         }
+// };
+
+
+// int main(){
+//     Owner m;
+//     cout<<m.getY()<<endl;
+    
+// }
+
+
+
+//ex4
+#include <string>
+
+// class Person{
+//     string name;
+//     int age;
+//     public:
+//         Person(): age(20) {
+
+//         }
+//         void display()const {
+//             cout<<"name"<<this->name<<endl;
+//             cout<<"age"<<this->age<<endl;
+
+//         }
+//         Person(const char *p , int mAge): name(p),age(mAge) {
+
+//         }
+
+// };
+
+// int main(){
+
+//     Person per;
+//     per.display();
+//     Person per2("omer",24);
+//     per2.display();
+// }
+
+
+
+//ex5
+
+
+// class Member {
+//     public:
+//         Member(){
+//             cout<<"default Member constructorr"<<endl;
+//         }
+//         ~Member(){
+//             cout<<" Member destructor"<<endl;
+//         }
+//         Member(const Member &r) {
+//             cout<<"copy constructor"<<endl;
+//         }
+// };
+
+// class Owner {
+//     public:
+//         int x;
+//         Member m;
+
+//         Owner(){
+//             cout<<"owner default constructor"<<endl;
+//         }
+//         ~Owner(){
+//             cout<<" Owner destructor"<<endl;
+
+//         }
+//         Owner(const Owner &r) :m(r.m) {
+//             cout<<"copy constructor"<<endl;
+//         }
+// };
+
+// int main(){
+//     Owner x;
+//     Owner y = x;
+    
+//     // x.x =5;
+//     // cout<<"y:"<<y.x<<endl;
+//     // cout<<"x:"<<x.x<<endl;
+
+
+// }
+
+
+//ex6
+
+class Member {
     public:
-        Engine(){
-            cout<<"Engine constructor"<<endl;
+        Member(){
+            cout<<"default Member constructorr"<<endl;
         }
-        ~Engine(){
-            cout<<"Engine destructor"<<endl;
+        ~Member(){
+            cout<<" Member destructor"<<endl;
         }
-        void run(){
-            cout<<"engine strarted"<<endl;
+        Member(const Member &r) {
+            cout<<"copy constructor"<<endl;
         }
-        int switcher;
+        Member& operator=(const Member &r) {
+            cout<<"member operator = is calling"<<endl;
 
-
+        }
 };
 
-class Car {
-    private:
-        Engine itsEngine;       
-
-
+class Owner {
+    int x;
+    Member m;
     public:
-        Car(){
-            cout<<"Car constructor"<<endl;
+
+
+        Owner(){
+            cout<<"owner default constructor"<<endl;
         }
-        ~Car(){
-            cout<<"Car destructor"<<endl;
+        ~Owner(){
+            cout<<" Owner destructor"<<endl;
+
         }
-        void run(){
-            itsEngine.switcher = 5;
-            itsEngine.run();
+        Owner(const Owner &r) :m(r.m) {
+            cout<<"copy constructor"<<endl;
+        }
+        Owner &operator=(const Owner &r) {
+            cout<<"operator = is calling"<<endl;
+            m = r.m;
+            return *this;
         }
 };
+
 
 
 int main(){
-   Car mycar;
-   mycar.run();
+    Owner x,y;
+    x = y;
+    Owner z = y; // copy constructor;
 }
