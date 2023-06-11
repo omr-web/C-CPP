@@ -128,25 +128,209 @@ class a gitmez.
 
 */
 
+// class Base {
+//     public:
+//         void func( )  {
+//             cout<<"base func"<<endl;
+//         }
+// };
+
+// class Der: public Base {
+//     public:
+//         void func() { // burada overload da çalışmaz ..!!!
+//             cout<<"der func"<<endl;
+//         }
+// };
+
+
+// int main(){
+//     Der myder;
+
+//     myder.func();
+//     myder.Base::func(); // aynı isimde ki base de ki fonksiyonu çağırmanın yolu.
+
+// }
+
+
+//ex5
+
+
+// class Base {
+//     public:
+//         void func(){
+//             cout<<"base func"<<endl;
+//         }
+// };
+
+// class Der: public Base {
+//     private:
+//         void func(){
+//             cout<<"der func"<<endl;
+//         }
+// };
+
+
+// int main(){
+//     Der myder;
+//     // myder.func(); 
+
+// }
+
+
+//ex6
+
+
+// class Base {
+//     public:
+//         static void func(){
+//             cout<<"base func"<<endl;
+//         }
+// };
+
+// class Der: public Base {
+//     public:
+//         void func(){
+//             cout<<"der func"<<endl;
+//         }
+// };
+
+
+// int main(){
+//     Der myder;
+//     myder.func(); 
+//     Base::func(); // STATİC Olduğu için sınıfa ait
+//     //Der::func(); // fonksiyon sınıfa ait değil nesneye ait
+
+    
+// }
+
+
+//ex7
+
+
+// class Base {
+//    int x;
+//    int pri;
+//     public:
+
+//     protected:
+//         int pt;
+// };
+
+// class Der: public Base {
+//     int a;
+//     public:
+//         void func(){
+//             a++;
+//         }
+// };
+
+
+// int main(){
+//     Der myder;
+
+//     myder.func();
+
+    
+// }
+
+//ex8
+
+
+// class Base {
+//    private: // türetilmiş 
+//         int x;
+//         int pri;
+//     public:
+
+//     protected:// türetilmiş sınıfta kullanılabilir., mainden ulaşılamaz
+//         int pt;
+// };
+
+// class Der: public Base {
+//     int a;
+//     public:
+//         void func(){
+//             a++;
+            
+//         }
+// };
+
+
+// int main(){
+//     Der myder;
+
+//     myder.func();
+
+    
+// }
+
+
+//ex9
+
+
+// class Base {
+//     public:
+//         Base() {
+//             cout<<"base default constructor"<<endl;
+//         }
+//         Base(int a) {
+//             cout<<"base int constructor"<<endl;
+//         }
+//         ~Base() {
+//             cout<<"base destructor"<<endl;
+//         }
+
+// };
+
+// class Der: public Base {
+//     public:
+//         Der():Base(1) /* bu durumda default const a gerek yok */ {
+//             cout<<"der constructor"<<endl;
+//         }
+//         ~Der() {
+//             cout<<"der destructor"<<endl;
+//         }
+// };
+
+
+
+// int main(){
+//     Der myder;
+// }
+
+
+//ex10 
+
+
+
 class Base {
     public:
-        void func( )  {
-            cout<<"base func"<<endl;
+        Base() {
+            cout<<"base default constructor"<<endl;
+        }
+        Base(const Base &r) {
+            cout<<"base copy constructor"<<endl;
+        }
+        ~Base() {
+            cout<<"base destructor"<<endl;
         }
 };
 
 class Der: public Base {
     public:
-        void func() { // burada overload da çalışmaz ..!!!
-            cout<<"der func"<<endl;
+        Der() {
+            cout<<"der default constructor"<<endl;
+        }
+        Der(const Der &r): Base(r) {
+            cout<<"der copy constructor"<<endl;
+        }
+        ~Der() {
+            cout<<"der destructor"<<endl;
         }
 };
 
-
 int main(){
     Der myder;
-
-    myder.func();
-    myder.Base::func(); // aynı isimde ki base de ki fonksiyonu çağırmanın yolu.
-
+    Der myder2(myder);
 }
